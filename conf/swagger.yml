@@ -1,0 +1,12 @@
+---
+  swagger: "2.0"
+  info:
+    title: "Site parser"
+    version: "1.0.0"
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  tags:
+    - name: Documentation
+      description: Self documentation URLs

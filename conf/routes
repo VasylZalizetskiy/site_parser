@@ -1,0 +1,59 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+###
+# summary: Swagger definition
+# description: for swagger UI to consume
+# tags:
+#   - Documentation
+###
+GET           /docs/api.json                                    @controllers.swagger.ApiSpecs.specs
+
+###
+# summary: Swagger HTML documentation
+# description: swagger UI
+# tags:
+#   - Documentation
+###
+GET           /docs/api.html                                    @controllers.swagger.ApiSpecs.docsIndex
+
+### NoDocs ###
+GET           /docs/*file                                         @controllers.swagger.ApiSpecs.docsResources(file)
+
+# Map static resources from the /public folder to the /assets URL path
+
+### NoDocs ###
+GET           /api/assets/*file                                   controllers.Assets.at(path="/public", file)
+### NoDocs ###
+GET           /assets/*file                                       controllers.Assets.at(path="/public", file)
+
+### NoDocs ###
+GET          /_requirejs                                          org.webjars.play.RequireJS.setup()
+
+### NoDocs ###
+GET         /webjars/*file                                        org.webjars.play.WebJarAssets.at(file)
+
+### NoDocs ###
+GET         /api/webjars/*file                                    org.webjars.play.WebJarAssets.at(file)
+
+###
+# summary: Test
+# description: test
+# tags:
+#   - Documentation
+# consumes:
+#   - multipart/form-data
+# parameters:
+#   - name: file
+#     in: formData
+#     type: file
+#     required: true
+#     description: test
+# responses:
+##   200:
+##     description: test ok
+###
+POST          /docs/test                                     @controllers.ParserController.test
+
