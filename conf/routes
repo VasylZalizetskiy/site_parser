@@ -39,10 +39,10 @@ GET         /webjars/*file                                        org.webjars.pl
 GET         /api/webjars/*file                                    org.webjars.play.WebJarAssets.at(file)
 
 ###
-# summary: Test
+# summary: Accept File with links
 # description: test
 # tags:
-#   - Documentation
+#   - Links
 # consumes:
 #   - multipart/form-data
 # parameters:
@@ -53,7 +53,27 @@ GET         /api/webjars/*file                                    org.webjars.pl
 #     description: test
 # responses:
 ##   200:
-##     description: test ok
+##     description: Links info
 ###
-POST          /docs/test                                     @controllers.ParserController.test
+POST          /links                                            @controllers.ParserController.acceptFile
+
+###
+# summary: Returns saved links info
+# tags:
+#   - Links
+# responses:
+#   200:
+#       description: Links info
+###
+GET           /links                                           @controllers.ParserController.showSavedLinksInfo
+
+###
+# summary: Parse links and update info in DB
+# tags:
+#   - Links
+# responses:
+#   200:
+#       description: Links info
+###
+PUT           /links                                           @controllers.ParserController.parseDonorsFromDB
 

@@ -18,5 +18,6 @@ libraryDependencies ++= Seq(
   "org.webjars"       %   "swagger-ui"                        % "3.13.3",
   "com.iheart"        %%  "play-swagger"                      % "0.7.4",
   "org.webjars"       %%  "webjars-play"                      % "2.6.3",
-  "net.ruippeixotog"  %%  "scala-scraper"                     % "2.1.0"
+  "net.ruippeixotog"  %%  "scala-scraper"                     % "2.1.0",
+  "org.reactivemongo" %%  "play2-reactivemongo"               % "0.13.0-play26"
 )
