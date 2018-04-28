@@ -1,6 +1,5 @@
 Site Parser
 ==============================
-Test task for job application.
 
 Very minimalistic site parser with REST API written on Scala with using SBT, Play Framework, MongoDB, Swagger.
 
